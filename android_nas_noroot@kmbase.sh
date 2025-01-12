@@ -46,9 +46,10 @@ fi"
 eval "$cloudflared_main"
 eval "$alist_main"
 eval "$aria2_main"
-tail -f "$PREFIX/nohup.out"
 
 # 追加到 termux-login.sh
-&&echo "$cloudflared_cmd" >> $PREFIX/termux-login.sh
-&&echo "$alist_cmd" >> $PREFIX/termux-login.sh
-&&echo "$aria2_cmd" >> $PREFIX/termux-login.sh
+echo "$cloudflared_cmd" >> $PREFIX/termux-login.sh &&
+echo "$alist_cmd" >> $PREFIX/termux-login.sh &&
+echo "$aria2_cmd" >> $PREFIX/termux-login.sh &&
+
+tail -f "$PREFIX/nohup.out"
