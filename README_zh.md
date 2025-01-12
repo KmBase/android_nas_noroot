@@ -45,7 +45,7 @@ pkg update && pkg upgrade && pkg install git
 ### 步骤 2：克隆本仓库
 
 ```
-git clone https://github.com/kmbase/android_nas_noroot
+git clone https://kkgithub.com/kmbase/android_nas_noroot
 ```
 
 ### 步骤 3：进入克隆的目录
