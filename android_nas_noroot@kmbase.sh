@@ -27,21 +27,21 @@ echo "alist_password=$alist_password" >> "$CONFIG_FILE"
 source "$CONFIG_FILE"
 
 # 构建启动命令字符串，先判断服务是否运行
-cloudflared_cmd=""
+cloudflared_cmd="
 if! pgrep -x "cloudflared" > /dev/null; then
     cloudflared_cmd="nohup cloudflared tunnel --no-autoupdate run $tunnel_token &"
 fi
-
-alist_cmd=""
+"
+alist_cmd="
 if! pgrep -x "alist" > /dev/null; then
     alist_cmd="nohup alist admin set $alist_password; nohup alist server --port 5244 &"
 fi
-
-aria2_cmd=""
+"
+aria2_cmd="
 if! pgrep -x "aria2" > /dev/null; then
     aria2_cmd="nohup aria2c --enable-rpc --rpc-allow-origin-all &"
 fi
-
+"
 # 追加到 termux-login.sh
 echo "$cloudflared_cmd" >> $PREFIX/etc/termux-login.sh
 echo "$alist_cmd" >> $PREFIX/etc/termux-login.sh
