@@ -15,7 +15,7 @@ read -p "set admin password of alist: " alist_password
 
 cloudflared_main="nohup cloudflared tunnel --no-autoupdate run --token $tunnel_token > "$PREFIX/nohup.out" 2>&1 &"
 alist_main="nohup alist server > "$PREFIX/nohup.out" 2>&1 &"
-alist_init="nohup alist admin set $alist_password & $alist_main &"
+alist_init="nohup alist admin set $alist_password & $alist_main"
 aria2_main="nohup aria2c --enable-rpc --rpc-allow-origin-all > "$PREFIX/nohup.out" 2>&1 &"
 ts_main="nohup transmission-daemon > "$PREFIX/nohup.out" 2>&1 &"
 tail_main="tail -f '$PREFIX/nohup.out' &"
