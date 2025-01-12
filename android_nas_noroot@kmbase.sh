@@ -7,7 +7,7 @@ pkg install termux-tools -y
 pkg install cloudflared -y
 pkg install alist -y
 pkg install aria2 -y
-
+pkg install transmission -y
 # 定义变量
 PREFIX="/data/data/com.termux/files/usr/etc"
 
@@ -16,9 +16,10 @@ read -p "set tunnel token of cloudflare: " tunnel_token
 read -p "set admin password of alist: " alist_password
 
 cloudflared_main="nohup cloudflared tunnel --no-autoupdate run --token $tunnel_token > "$PREFIX/nohup.out" 2>&1 &"
-alist_init = "nohup alist admin set $alist_password &&"
+alist_init="nohup alist admin set $alist_password &&"
 alist_main="nohup alist server > "$PREFIX/nohup.out" 2>&1 &"
 aria2_main="nohup aria2c --enable-rpc --rpc-allow-origin-all > "$PREFIX/nohup.out" 2>&1 &"
+ts_main="nohup transmission-daemon > "$PREFIX/nohup.out" 2>&1 &"
 tail_main="tail -f '$PREFIX/nohup.out' &"
 
 # 构建启动命令字符串，先判断服务是否运行
@@ -48,12 +49,13 @@ fi"
 eval "$cloudflared_main"
 eval "$alist_init"
 eval "$alist_main"
-
+eval "$ts_main"
 
 # 追加到 termux-login.sh
 echo "$cloudflared_cmd" >> $PREFIX/termux-login.sh
 echo "$alist_cmd" >> $PREFIX/termux-login.sh
 echo "$aria2_cmd" >> $PREFIX/termux-login.sh
 echo "$tail_main" >> $PREFIX/termux-login.sh
+echo "$ts_main" >> $PREFIX/termux-login.sh
 
 eval "$tail_main"
