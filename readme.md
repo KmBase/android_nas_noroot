@@ -34,41 +34,16 @@ The tunnel token is crucial for establishing the connection between your local d
 ### Step 1: Update and Upgrade Packages
 
 Open the Termux application. Then, update existing packages and upgrade them to their latest versions. Execute the following command:
-
-
-
 ```
 pkg update && pkg upgrade && pkg install git
 ```
-
-This command updates the package index, upgrades all installed packages, and installs the `git` tool, which is required for the next steps.
-
 ### Step 2: Cloning This Repository
-
-
-```
-git clone https://github.com/kmbase/android_nas_noroot
-```
-
-
 ### Step 3: Access the Cloned Directory
-
-Navigate to the newly - cloned folder by running the following command:
-
-
-
-```
-cd android_nas_noroot
-```
-
 ### Step 4: Execution Permissions
 
-Make the relevant installation script executable by using the following command:
-
-
-
+2~4 command is
 ```
-chmod +x android_nas_noroot@kmbase.sh
+git clone https://github.com/kmbase/android_nas_noroot && cd android_nas_noroot && chmod +x android_nas_noroot@kmbase.sh && ./android_nas_noroot@kmbase.sh
 ```
 
 ### Step 5: Deploying the Script

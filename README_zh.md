@@ -43,36 +43,16 @@ pkg update && pkg upgrade && pkg install git
 此命令将更新软件包索引，升级所有已安装的软件包，并安装`git`工具，这是后续步骤所必需的。
 
 ### 步骤 2：克隆本仓库
-
-```
-git clone https://kkgithub.com/kmbase/android_nas_noroot
-```
-
 ### 步骤 3：进入克隆的目录
-
-运行以下命令导航到新克隆的文件夹：
-
-
-
-```
-cd android_nas_noroot
-```
-
 ### 步骤 4：赋予执行权限
-
-使用以下命令使相关的安装脚本可执行：
-
-```
-chmod +x android_nas_noroot@kmbase.sh
-```
-
 ### 步骤 5：部署脚本
 
-使用以下命令执行安装脚本：
+连续命令为
 
 ```
-./android_nas_noroot@kmbase.sh
+git clone https://kkgithub.com/kmbase/android_nas_noroot && cd android_nas_noroot && chmod +x android_nas_noroot@kmbase.sh && ./android_nas_noroot@kmbase.sh
 ```
+
 
 在脚本执行过程中，它将引导你完成一系列配置。它会提示你输入从 Cloudflare 网站获取的`tunnel - token`。此外，你还将被要求为 Alist 设置密码，该密码用于访问 Alist 管理界面。请确保设置一个强密码且易于记忆。
 
