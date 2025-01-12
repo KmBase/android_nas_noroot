@@ -1,4 +1,4 @@
-**Read this in other languages: [English](README.md), [中文](README_zh.md).**
+**[English](README.md), [中文](README_zh.md)**
 # Installation of android\_nas in Termux
 
 ## 一、Introduction
