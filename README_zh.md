@@ -37,6 +37,8 @@ tunnel token 对于在你的本地设备和 Cloudflare Tunnel 服务之间建立
 
 
 ```
+termux-change-repo # 切换源
+termux-setup-storage # 申请获取系统文件权限
 pkg update && pkg upgrade && pkg install git
 ```
 

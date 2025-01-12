@@ -2,8 +2,6 @@
 
 # 更新软件包并安装所需工具
 pkg install termux-tools -y
-# termux-change-repo
-# termux-setup-storage
 pkg install cloudflared -y
 pkg install alist -y
 pkg install aria2 -y

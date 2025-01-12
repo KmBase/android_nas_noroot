@@ -35,6 +35,8 @@ The tunnel token is crucial for establishing the connection between your local d
 
 Open the Termux application. Then, update existing packages and upgrade them to their latest versions. Execute the following command:
 ```
+termux-change-repo
+termux-setup-storage
 pkg update && pkg upgrade && pkg install git
 ```
 ### Step 2: Cloning This Repository
