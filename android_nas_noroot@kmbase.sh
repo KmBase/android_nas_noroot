@@ -36,21 +36,21 @@ cloudflared_cmd="if pgrep -x 'cloudflared' >/dev/null
   then
     echo 'cloudflared服务运行中...'
   else
-    $cloudflared_main & 
+    $cloudflared_main
     echo 'fcloudflared服务已开启...'
 fi"
 alist_cmd="if pgrep -x 'alist' >/dev/null
   then
     echo 'alist服务运行中...'
   else
-    $alist_main & 
+    $alist_main
     echo 'alist服务已开启...'
 fi"
 aria2_cmd="if pgrep -x 'aria2' >/dev/null
   then
     echo 'aria2服务运行中...'
   else
-    $aria2_main & 
+    $aria2_main
     echo 'aria2服务已开启...'
 fi"
 
