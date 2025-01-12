@@ -40,20 +40,12 @@ pkg update && pkg upgrade && pkg install git
 ### Step 2: Cloning This Repository
 ### Step 3: Access the Cloned Directory
 ### Step 4: Execution Permissions
-
-2~4 command is
-```
-git clone https://github.com/kmbase/android_nas_noroot && cd android_nas_noroot && chmod +x android_nas_noroot@kmbase.sh && ./android_nas_noroot@kmbase.sh
-```
-
 ### Step 5: Deploying the Script
 
-Execute the installation script with the following command:
-
-
+2~5 command is
 
 ```
-./android_nas_noroot@kmbase.sh
+git clone https://github.com/kmbase/android_nas_noroot && cd android_nas_noroot && chmod +x android_nas_noroot@kmbase.sh && ./android_nas_noroot@kmbase.sh
 ```
 
 During the script execution, it will guide you through a series of configurations. It will prompt you to input the `tunnel - token` which you obtained from the Cloudflare website. Additionally, you will be asked to set a password for Alist, which is used to access the Alist management interface. Make sure to set a strong and memorable password.

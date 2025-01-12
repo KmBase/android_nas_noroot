@@ -53,7 +53,6 @@ pkg update && pkg upgrade && pkg install git
 git clone https://kkgithub.com/kmbase/android_nas_noroot && cd android_nas_noroot && chmod +x android_nas_noroot@kmbase.sh && ./android_nas_noroot@kmbase.sh
 ```
 
-
 在脚本执行过程中，它将引导你完成一系列配置。它会提示你输入从 Cloudflare 网站获取的`tunnel - token`。此外，你还将被要求为 Alist 设置密码，该密码用于访问 Alist 管理界面。请确保设置一个强密码且易于记忆。
 
 ## 四、理解整体流程
