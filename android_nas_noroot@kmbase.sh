@@ -9,7 +9,7 @@ pkg install alist -y
 pkg install aria2 -y
 
 # 定义变量
-PREFIX="~/usr/etc"
+PREFIX="/data/data/com.termux/files/usr/etc"
 
 # 获取用户输入的关键信息
 read -p "set tunnel token of cloudflare: " tunnel_token
