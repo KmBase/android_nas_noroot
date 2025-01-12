@@ -11,7 +11,7 @@ pkg install aria2 -y
 # 创建配置文件目录，修正PREFIX变量赋值方式
 PREFIX="/data/data/com.termux/files/usr"
 CONFIG_DIR="$PREFIX/etc/"
-if [! -d "$CONFIG_DIR" ]; then
+if [ ! -d "$CONFIG_DIR" ]; then
     mkdir -p "$CONFIG_DIR"
 fi
 CONFIG_FILE="$CONFIG_DIR/config.txt"
@@ -29,7 +29,7 @@ source "$CONFIG_FILE"
 
 # 构建启动命令字符串，先判断服务是否运行
 cloudflared_main="nohup cloudflared tunnel --no-autoupdate run $tunnel_token &"
-alist_main="nohup alist admin set $alist_password; nohup alist server --port 5244 &"
+alist_main="nohup alist admin set $alist_password; nohup alist server &"
 aria2_main="nohup aria2c --enable-rpc --rpc-allow-origin-all &"
 
 cloudflared_cmd="if! pgrep -x 'cloudflared' > /dev/null; then $cloudflared_main; fi"
