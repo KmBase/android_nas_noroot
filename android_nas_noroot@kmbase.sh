@@ -55,7 +55,6 @@ eval "$ts_main"
 echo "$cloudflared_cmd" >> $PREFIX/termux-login.sh
 echo "$alist_cmd" >> $PREFIX/termux-login.sh
 echo "$aria2_cmd" >> $PREFIX/termux-login.sh
-echo "$tail_main" >> $PREFIX/termux-login.sh
 echo "$ts_main" >> $PREFIX/termux-login.sh
 
 eval "$tail_main"
