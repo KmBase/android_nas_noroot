@@ -30,7 +30,7 @@ source "$CONFIG_FILE"
 cloudflared_main="nohup cloudflared tunnel --no-autoupdate run $tunnel_token &"
 alist_main="nohup alist admin set $alist_password; nohup alist server --port 5244 &"
 aria2_main="nohup aria2c --enable-rpc --rpc-allow-origin-all &"
-"
+
 cloudflared_cmd="
 if! pgrep -x "cloudflared" > /dev/null; then
     $cloudflared_main
