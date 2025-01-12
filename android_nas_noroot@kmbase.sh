@@ -51,4 +51,4 @@ echo "$aria2_cmd" >> $PREFIX/termux-login.sh
 eval "$cloudflared_main"
 eval "$alist_main"
 eval "$aria2_main"
-tail -f $LOGFILE
+tail -f "$PREFIX/nohup.out"
