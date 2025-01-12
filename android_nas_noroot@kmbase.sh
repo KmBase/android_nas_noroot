@@ -8,8 +8,11 @@ pkg install cloudflared -y
 pkg install alist -y
 pkg install aria2 -y
 
+# 定义变量
+PREFIX="~/usr"
+LOGFILE="~/etc/nohup.out"
+
 # 创建配置文件目录，修正PREFIX变量赋值方式
-PREFIX="/data/data/com.termux/files/usr"
 CONFIG_DIR="$PREFIX/etc/"
 if [ ! -d "$CONFIG_DIR" ]; then
     mkdir -p "$CONFIG_DIR"
@@ -20,9 +23,9 @@ CONFIG_FILE="$CONFIG_DIR/config.txt"
 read -p "set tunnel token of cloudflare: " tunnel_token
 read -p "set admin password of alist: " alist_password
 
-cloudflared_main="nohup cloudflared tunnel --no-autoupdate run -token $tunnel_token &"
-alist_main="nohup alist admin set $alist_password; nohup alist server &"
-aria2_main="nohup aria2c --enable-rpc --rpc-allow-origin-all &"
+cloudflared_main="nohup cloudflared tunnel --no-autoupdate run --token $tunnel_token > $LOGFILE 2>&1 &"
+alist_main="nohup alist admin set $alist_password; nohup alist server > $LOGFILE 2>&1 &"
+aria2_main="nohup aria2c --enable-rpc --rpc-allow-origin-all > $LOGFILE 2>&1 &"
 
 # 构建启动命令字符串，先判断服务是否运行
 cloudflared_cmd="if pgrep -x 'cloudflared' >/dev/null
@@ -56,5 +59,4 @@ echo "$aria2_cmd" >> $PREFIX/etc/termux-login.sh
 eval "$cloudflared_main"
 eval "$alist_main"
 eval "$aria2_main"
-
-
+tail -f $LOGFILE
