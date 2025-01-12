@@ -19,7 +19,7 @@ cloudflared_main="nohup cloudflared tunnel --no-autoupdate run --token $tunnel_t
 alist_init = "nohup alist admin set $alist_password &&"
 alist_main="nohup alist server > "$PREFIX/nohup.out" 2>&1 &"
 aria2_main="nohup aria2c --enable-rpc --rpc-allow-origin-all > "$PREFIX/nohup.out" 2>&1 &"
-tail_main="&& tail -f '$PREFIX/nohup.out' &"
+tail_main="tail -f '$PREFIX/nohup.out' &"
 
 # 构建启动命令字符串，先判断服务是否运行
 cloudflared_cmd="if pgrep -x 'cloudflared' >/dev/null
@@ -51,9 +51,9 @@ eval "$alist_main"
 
 
 # 追加到 termux-login.sh
-echo "$cloudflared_cmd" >> $PREFIX/termux-login.sh &&
-echo "$alist_cmd" >> $PREFIX/termux-login.sh &&
-echo "$aria2_cmd" >> $PREFIX/termux-login.sh &&
-echo "$tail_main" >> $PREFIX/termux-login.sh &&
+echo "$cloudflared_cmd" >> $PREFIX/termux-login.sh
+echo "$alist_cmd" >> $PREFIX/termux-login.sh
+echo "$aria2_cmd" >> $PREFIX/termux-login.sh
+echo "$tail_main" >> $PREFIX/termux-login.sh
 
 eval "$tail_main"
