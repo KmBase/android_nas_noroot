@@ -97,7 +97,6 @@ For aria2: `pgrep -x "aria2"`
 **Directory Management**: You can perform operations such as creating new folders, renaming, deleting, or moving existing folders.
 
 ### 3. Reference
-### 3. 参考文献
 **android_12_background_limit_termux**：[android_12_background_limit_termux](https://cloud-atlas.readthedocs.io/zh-cn/latest/android/apps/android_12_background_limit_termux.html)
 
 **termux**：[termux daemon](https://blog.csdn.net/YiBYiH/article/details/127294017)
