@@ -42,7 +42,13 @@ aria2_cmd="if pgrep -x 'aria2' >/dev/null
     $aria2_main
     echo 'aria2服务已开启...'
 fi"
-
+ts_cmd="if pgrep -x 'transmission-daemon' >/dev/null
+  then
+    echo 'transmission-daemon服务运行中...'
+  else
+    $ts_main
+    echo 'transmission-daemon服务已开启...'
+fi"
 # 启动服务
 eval "$cloudflared_main"
 eval "$alist_init"
@@ -52,6 +58,6 @@ eval "$ts_main"
 echo "$cloudflared_cmd" >> $PREFIX/termux-login.sh
 echo "$alist_cmd" >> $PREFIX/termux-login.sh
 echo "$aria2_cmd" >> $PREFIX/termux-login.sh
-echo "$ts_main" >> $PREFIX/termux-login.sh
+echo "$ts_cmd" >> $PREFIX/termux-login.sh
 
 eval "$tail_main"
