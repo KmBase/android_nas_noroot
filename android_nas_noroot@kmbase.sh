@@ -32,7 +32,7 @@ alist_cmd="if pgrep -x 'alist' >/dev/null
   then
     echo 'alist服务运行中...'
   else
-    $alist_main
+    $alist_init
     echo 'alist服务已开启...'
 fi"
 aria2_cmd="if pgrep -x 'aria2' >/dev/null
